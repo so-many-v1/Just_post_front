@@ -1,12 +1,41 @@
-# React + Vite
+# Just Post Frontend
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Этот проект представляет собой клиентскую часть приложения Just Post — минималистичной социальной сети для создания и просмотра постов, управления подписками и профилем пользователя.
 
-Currently, two official plugins are available:
+## Стек технологий
+- **React 18** — библиотека для построения UI
+- **React Router** — маршрутизация между страницами
+- **Axios** — HTTP-запросы к backend
+- **SCSS Modules** — стилизация компонентов
+- **Vite** — инструмент сборки
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Основные фичи
 
-## Expanding the ESLint configuration
+### Авторизация & Регистрация
+- JWT-токен хранится в localStorage
+- Публичный ключ RS256 подписывается в .env и декодирует токен
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+### Профиль пользователя
+- Отображение своих постов
+- Опция добавления поста
+- Кнопки subscribe / unsubscribe с активным изменением стауса
+
+### Стили
+- SCSS модули
+- Кнопки, стилизованные в стиле VK 
+
+## Запуск
+
+```
+yarn install
+yarn dev
+```
+
+## Планы
+- Добавить лайки
+- Инфо о подписчиках
+- Страницы других юзеров
+- WebSocket оповещения
+
+
+
