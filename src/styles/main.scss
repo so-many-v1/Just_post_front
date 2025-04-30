@@ -1,0 +1,20 @@
+@use "./reset.scss";
+@use "./variables.scss" as vars;
+@use "./fonts" as fonts;
+
+body{
+  background-color: vars.$bg-color;
+
+  #root{
+    width: 100vw;
+    height: 100vh;
+    background-color: vars.$bg-color;
+
+    .wrapper {
+      margin: 0 auto;
+      max-width: vars.$max-width;
+      min-height: 100vh;
+      font-family: fonts.$main-font;
+    }
+  }
+}

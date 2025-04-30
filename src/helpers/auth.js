@@ -1,0 +1,33 @@
+import { jwtVerify, importSPKI } from "jose";
+
+const pubkey = `-----BEGIN PUBLIC KEY-----
+MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAzQ8LolxfKh/e2vOq+L4P
+YYO/Et6xlJOo2xSGEPW89P/19T0/dppZBBm2HCbNUt3S/qsKK5Yv4QzBAS6aAKPl
+dnnaj3bBlHBka8/StoL53xgdbMDpoj+cUD9OUkgV7JB9C49XIH7XkEONeSd7WjjN
+wLOcwJn23zbrejaLqtGG9V/80FAz4bjdaFPjZ1IHjVGIh4AURw5C3RVFcUjjNu8m
+TT1c5dFrjz9pwJjZF97G4aqzlxivTZuiLVnNn4SvszGYLswATsD1VKFS6Kw//HHQ
+NlS/+RjVGlF9BlAQ5cGY1J/QlvSg/cDTDmN5V+oQMfRBG+m3WeS1NHXkjwUbixjs
+SQIDAQAB
+-----END PUBLIC KEY-----`;
+
+const getAccessToken = () => {
+    const token = localStorage.getItem("access-token")
+
+    if (token) {
+        return token
+    }
+}
+
+const decodeToken = async token => {
+
+    try {
+        const key = await importSPKI(pubkey, "RS256")
+        const {payload} = await jwtVerify(token, key)
+        return payload
+    } catch (err) {
+        console.error("Ошибка верификации токена.", err);
+        return null;
+    }
+}
+
+export {decodeToken, getAccessToken}

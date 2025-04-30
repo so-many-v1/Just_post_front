@@ -1,0 +1,61 @@
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.4); // полупрозрачный тёмный фон
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+.wrapper {
+  background: #ffffff;
+  border-radius: 12px;
+  width: 360px;
+  padding: 24px 20px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+  text-align: center;
+}
+
+.wrapper__msg {
+  font-size: 18px;
+  color: #222;
+  margin-bottom: 20px;
+}
+
+.wrapper__buttons {
+  display: flex;
+  justify-content: space-around;
+  gap: 10px;
+}
+
+.wrapper__buttons button {
+  flex: 1;
+  padding: 10px 0;
+  font-size: 16px;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.wrapper__buttons button:first-child {
+  background-color: #4bb34b; // зелёная кнопка "Да"
+  color: white;
+}
+
+.wrapper__buttons button:first-child:hover {
+  background-color: #449d44;
+}
+
+.wrapper__buttons button:last-child {
+  background-color: #ebedf0; // светло-серый фон для "Нет"
+  color: #2c2d2e;
+}
+
+.wrapper__buttons button:last-child:hover {
+  background-color: #d3d6db;
+}

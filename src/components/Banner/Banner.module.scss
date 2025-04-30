@@ -1,0 +1,43 @@
+@use "../../styles/variables" as vars;
+@use "../../styles/fonts" as fonts;
+.banner {
+
+  position: sticky;
+  top: 0;
+  width: 100vw;
+  height: vars.$banner-height;
+  background-color: whitesmoke;
+
+  .wrapper {
+    max-width: vars.$max-width;
+    height: 100%;
+    margin: 0 auto;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+    font-family: fonts.$main-font;
+
+
+
+
+    .banner__logo{
+      display: flex;
+      gap: 30px;
+      align-items: center;
+
+      font-family: fonts.$special-font;
+
+      img {
+        width: 50px;
+        border-radius: 20%;
+      }
+    }
+
+    .banner__profile{
+        display: flex;
+        gap: 10px;
+    }
+  }
+}

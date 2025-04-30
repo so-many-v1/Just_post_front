@@ -1,0 +1,30 @@
+@use "../../styles/variables" as vars;
+@use "../../styles/fonts" as fonts;
+
+.layout {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.main {
+  display: flex;
+  flex: 1;
+  max-width: vars.$max-width;
+  margin: 0 auto;
+  width: 100%;
+}
+
+.sidebar {
+  position: sticky;
+  top: vars.$banner-height;
+  align-self: flex-start;
+  width: 200px;
+  padding: 20px 10px;
+  height: fit-content;
+}
+
+.content {
+  flex: 1;
+  padding: 20px;
+}
